@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: modelens
+Version: 0.1.0
+Summary: Diagnostic lens for binary classification ML models
+Home-page: https://github.com/yourusername/modelens
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Intended Audience :: Science/Research
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.20
+Requires-Dist: matplotlib>=3.4
+Requires-Dist: seaborn>=0.11
+Requires-Dist: scikit-learn>=1.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 🔍 modelens
+
+**Model Lens** — diagnostic dashboard for binary classification models.
+
+One function call gives you the full picture:
+
+- Loss curve (CatBoost / XGBoost / LightGBM)
+- Score distribution histograms (train + test)
+- Confusion matrix
+- ROC curve with AUC
+- Precision-Recall curves (all data + test, both classes)
+
+## Installation
+
+```bash
+pip install modelens
