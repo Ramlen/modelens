@@ -2,7 +2,7 @@ Metadata-Version: 2.4
 Name: modelens
 Version: 0.1.2
 Summary: Diagnostic lens for binary classification ML models
-Home-page: https://github.com/yourusername/modelens
+Home-page: https://github.com/ramlen/modelens
 Author: Leonid
 Author-email: lvgajval@yandex.ru
 Classifier: Programming Language :: Python :: 3

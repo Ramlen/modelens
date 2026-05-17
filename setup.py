@@ -11,7 +11,7 @@ setup(
     description="Diagnostic lens for binary classification ML models",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/modelens",
+    url="https://github.com/ramlen/modelens",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
