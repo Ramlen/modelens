@@ -5,13 +5,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="modelens",
-    version="0.1.2",
+    version="0.1.3",
     author="Leonid",
     author_email="lvgajval@yandex.ru",
     description="Diagnostic lens for binary classification ML models",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/ramlen/modelens",
+    url="https://github.com/Ramlen/modelens",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
