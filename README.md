@@ -1,4 +1,4 @@
-# 🔍 modelens
+# modelens
 
 **Model Lens** — diagnostic dashboard for binary classification models.
 

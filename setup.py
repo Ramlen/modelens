@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="modelens",
-    version="0.1.3",
+    version="0.1.4",
     author="Leonid",
     author_email="lvgajval@yandex.ru",
     description="Diagnostic lens for binary classification ML models",

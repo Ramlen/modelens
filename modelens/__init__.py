@@ -9,7 +9,7 @@ from modelens.diagnostics import (
     plot_pr_curves,
 )
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 __all__ = [
     "plot_model_diagnostics",
     "plot_loss_curve",
