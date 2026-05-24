@@ -12,6 +12,7 @@ def plot_model_diagnostics(
     figsize=(16, 10),
     bins=30,
     model_name=None,
+    log=False
 ):
     """
     Comprehensive diagnostic dashboard for binary classification models.
@@ -36,6 +37,8 @@ def plot_model_diagnostics(
         Number of bins for score distribution histograms.
     model_name : str, optional
         Display name. Falls back to type(model).__name__.
+    log : bool, default=False
+        log-scale for score distribution histograms.
 
     Returns
     -------
@@ -59,12 +62,12 @@ def plot_model_diagnostics(
     plot_roc_curve(model, X_test, y_test, axs[0, 2])
 
     # Row 1
-    plot_score_distribution(model, X, y, axs[1, 0], bins=bins, title="All data")
+    plot_score_distribution(model, X, y, axs[1, 0], bins=bins, title="All data", log=log)
     _plot_pr_curve(model, X, y, model_name, pos_label=0, ax=axs[1, 1], title="PR curve, All data (class 0)")
     _plot_pr_curve(model, X, y, model_name, pos_label=1, ax=axs[1, 2], title="PR curve, All data (class 1)")
 
     # Row 2
-    plot_score_distribution(model, X_test, y_test, axs[2, 0], bins=bins, title="Test data")
+    plot_score_distribution(model, X_test, y_test, axs[2, 0], bins=bins, title="Test data", log=log)
     _plot_pr_curve(model, X_test, y_test, model_name, pos_label=0, ax=axs[2, 1], title="PR curve, Test data (class 0)")
     _plot_pr_curve(model, X_test, y_test, model_name, pos_label=1, ax=axs[2, 2], title="PR curve, Test data (class 1)")
 
@@ -110,7 +113,7 @@ def plot_loss_curve(model, ax):
     ax.set_title("Loss")
 
 
-def plot_score_distribution(model, X, y, ax, bins=30, title=""):
+def plot_score_distribution(model, X, y, ax, bins=30, title="", log=False):
     """Histogram of predicted scores by class."""
     scores = model.predict_proba(X)[:, 1]
     y = np.asarray(y)
@@ -121,6 +124,11 @@ def plot_score_distribution(model, X, y, ax, bins=30, title=""):
     ax.set_ylabel("Counts")
     ax.set_title(title)
     ax.legend(loc="upper center")
+
+    if log:
+        ax.set_yscale('log')
+        ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{y:,.0f}'))
+        ax.set_ylabel("Counts (log scale)")
 
 
 def plot_confusion_matrix(y_true, y_pred, ax):
